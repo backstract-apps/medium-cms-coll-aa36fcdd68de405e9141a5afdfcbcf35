@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: medium-cms-coll-aa36fcdd68de405e9141a5afdfcbcf35-depl
+  labels:
+    app: medium-cms-coll-aa36fcdd68de405e9141a5afdfcbcf35
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: medium-cms-coll-aa36fcdd68de405e9141a5afdfcbcf35
+  template:
+    metadata:
+      labels:
+        app: medium-cms-coll-aa36fcdd68de405e9141a5afdfcbcf35
+    spec:
+      containers:
+        - name: medium-cms-coll-aa36fcdd68de405e9141a5afdfcbcf35
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:medium-cms-coll-aa36fcdd68de405e9141a5afdfcbcf35
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9008
